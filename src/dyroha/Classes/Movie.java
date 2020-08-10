@@ -5,16 +5,13 @@ public class Movie {
 	private String[] genre = new String[5];
 	private int numberOfPurchaces;
 	
-
-	public Movie(String[] info) {
-		this.id = info[0];
-		this.name = info[1];
-		this.year = info[2];
-		for (int i = 0; i <= 4; i++) {
-			genre[i] = info[i+3];
-		}
-		this.rating = info[8];
-		this.price = info[9];
+	public Movie(String id, String name, String year, String[] genre, String rating, String price) {
+		this.id = id;
+		this.name = name;
+		this.year = year;
+		this.genre = genre;
+		this.rating = rating;
+		this.price = price;
 	}
 	
 	public String getId() { 
