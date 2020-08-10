@@ -5,8 +5,9 @@ Origionaly made for submission to Experis
 
 ## Features
 
-- Includes [Library](https://github.com/Dyroha/MovieCase/blob/development/src/dyroha/Classes/Library.java), [Movie](https://github.com/Dyroha/MovieCase/blob/development/src/dyroha/Classes/Movie.java) and [User](https://github.com/Dyroha/MovieCase/blob/development/src/dyroha/Classes/User.java) classes.
-- Includes [MovieFileHandler](https://github.com/Dyroha/MovieCase/blob/development/src/dyroha/Handlers/MovieFileHandler.java) that read the User.txt, Products.txt and CurrentUserSession.txt files and creates the above objects.
+- Includes [Library](https://github.com/Dyroha/MovieCase/blob/master/src/dyroha/Classes/Library.java), [Movie](https://github.com/Dyroha/MovieCase/blob/master/src/dyroha/Classes/Movie.java) and [User](https://github.com/Dyroha/MovieCase/blob/master/src/dyroha/Classes/User.java) classes.
+- Includes [MovieFileHandler](https://github.com/Dyroha/MovieCase/blob/master/src/dyroha/Handlers/MovieFileHandler.java) that read the User.txt, Products.txt and CurrentUserSession.txt files and creates the above objects.
+- Includes [UserMovieRecomender](https://github.com/Dyroha/MovieCase/blob/master/src/dyroha/Handlers/UserMovieRecomender.java) that takes in a user and has functionality to recomend movies they would be interested in and haven't purchaced
 
 ## Comments
 
@@ -36,6 +37,9 @@ The highest rated movies currently are:
 
 Recomend by most watched genre:
   - I started working on this but thought as it wasn't nessasary I would focus on the needed functionality
+
+Add acctual Exception implimentation:
+ - I also started on doing this but I am no too familiar with the java convention for doing so, so I thought I would add it when I am more researched on the topic
 
 ### Possible changes
 
