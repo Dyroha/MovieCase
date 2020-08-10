@@ -12,7 +12,8 @@ public class Test {
 		Library lib = fileHandler.getProducts();
 		User current = fileHandler.getUser("1");
 		System.out.println(current.getUserID() + " " + current.getUserName() + " " + Arrays.toString(current.getViewed()) 
-			+ " " + Arrays.toString(current.getPurchaced()) + " " + current.getCurrentViewing().toString());
+			+ " " + Arrays.toString(current.getPurchaced()) + " " + current.getCurrentViewing());
+		System.out.println(lib);
 		
 	}
 

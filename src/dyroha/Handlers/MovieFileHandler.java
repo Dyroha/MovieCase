@@ -11,13 +11,13 @@ import dyroha.Classes.*;
 /** This class reads the files and creates the User array, Library object and gets the currently viewed movie for a user
  * 
  * @author Dylan Hamilton
- *
+ * @version 1.2
  */
 public class MovieFileHandler {
 	private File users, products, currentUserSession;
 	private Library library;
 
-	/** Creates the File users, products, and currentUserSession if they exist in the directory.
+	/** Creates the File users, products, and currentUserSession if they exist in the directory by the given names.
 	 * 
 	 * @param fileDirectory The directory the files are stored in
 	 */
@@ -40,9 +40,9 @@ public class MovieFileHandler {
 		}
 	}
 	
-	/** Gets the users from the file and creates a list of them
+	/** Creates an array of {@link dyroha.Classes.User User} objects from the contents of the file
 	 * 
-	 * @return A list of the users
+	 * @return An array of the {@link dyroha.Classes.User users}
 	 * @throws IOException if the file couldn't be found
 	 */
 	public User getUser(String id) throws IOException {
@@ -58,13 +58,13 @@ public class MovieFileHandler {
 			}
 		}
 		br.close();
-		getCurrentViewing(user);
+		addCurrentViewing(user);
 		return user;
 	}
 	
 	/** Gets the products from the file and creates a list of them and makes them into a {@link dyroha.Classes.Library library} object
 	 * 
-	 * @return {@link dyroha.Classes.Library library} object of the movies currently in the file
+	 * @return {@link dyroha.Classes.Library Library} of the movies currently in the file
 	 * @throws IOException if the file couldn't be found
 	 */
 	public Library getProducts() throws IOException {
@@ -90,7 +90,7 @@ public class MovieFileHandler {
 			for(String id : movieIds) {
 				for(Movie movie: lib.getLibrary()) {
 					if (movie.getId().equals(id)) {
-						movie.setNumberOfPurchaces(movie.getNumberOfPurchaces()+1);
+						movie.setNumberOfPurchases(movie.getNumberOfPurchases()+1);
 						break;
 					}
 				}
@@ -101,12 +101,7 @@ public class MovieFileHandler {
 		return lib;
 	}
 	
-	/**
-	 * 
-	 * @param user user find and add the current viewing movie to
-	 * @throws IOException if the file couldn't be found
-	 */
-	private void getCurrentViewing(User user) throws IOException {
+	private void addCurrentViewing(User user) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(currentUserSession));
 		String st;
 		String[] parts;

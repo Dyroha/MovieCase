@@ -1,10 +1,25 @@
 package dyroha.Classes;
 
+/** Represents a Movie
+ * 
+ * @author Dylan Hamilton
+ * @version 1.1
+ *
+ */
 public class Movie {
 	private String id , name, year, rating, price;
 	private String[] genre = new String[5];
-	private int numberOfPurchaces;
+	private int numberOfPurchases;
 	
+	/** Creates a Movie
+	 * 
+	 * @param id movie ID
+	 * @param name movie name
+	 * @param year movie's year of release
+	 * @param genre String array of movie's genres
+	 * @param rating movie rating
+	 * @param price movie price
+	 */
 	public Movie(String id, String name, String year, String[] genre, String rating, String price) {
 		this.id = id;
 		this.name = name;
@@ -14,43 +29,72 @@ public class Movie {
 		this.price = price;
 	}
 	
+	/** Gets movie's ID
+	 * 
+	 * @return The ID
+	 */
 	public String getId() { 
-		return this.id; 
+		return id; 
 	}
 
+	/** Gets movie's name
+	 * 
+	 * @return The name
+	 */
 	public String getName() {
-		return this.name;
+		return name;
 	}
 	
+	/** Gets movie's year of release
+	 * 
+	 * @return The year
+	 */
 	public String getYear() {
-		return this.year;
+		return year;
 	}
 
-
+	/** Gets movie's genres
+	 * 
+	 * @return The String array of movie's genres
+	 */
 	public String[] getGenre() {
-		return this.genre;
+		return genre;
 	}
 
-
+	/** Gets movie's rating
+	 * 
+	 * @return The rating
+	 */
 	public String getRating() {
-		return this.rating;
+		return rating;
 	}
 
-
+	/** Gets movie's price
+	 * 
+	 * @return The price
+	 */
 	public String getPrice() {
-		return this.price;
+		return price;
 	}
 
-	public int getNumberOfPurchaces() {
-		return this.numberOfPurchaces;
+	/** Gets movie's number of purchases
+	 * 
+	 * @return The number of purchases
+	 */
+	public int getNumberOfPurchases() {
+		return numberOfPurchases;
 	}
 
-	public void setNumberOfPurchaces(int numberOfPurchaces) {
-		this.numberOfPurchaces = numberOfPurchaces;
+	/** Sets the numberOfPurchases
+	 * 
+	 * @param numberOfPurchases The number of purchases
+	 */
+	public void setNumberOfPurchases(int numberOfPurchases) {
+		this.numberOfPurchases = numberOfPurchases;
 	}
 	
 	public String toString() {
-		return name + " Rated: " + rating;
+		return name + " - " + rating + "/5 stars";
 	}
 
 }
