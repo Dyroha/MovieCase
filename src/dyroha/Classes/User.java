@@ -5,11 +5,11 @@ public class User {
 	private String[] viewed, purchaced;
 	private Movie currentViewing;
 	
-	public User(String[] info) {
-		this.userID = info[0];
-		this.userName = info[1];
-		this.viewed = info[2].split(";");
-		this.purchaced = info[3].split(";");
+	public User(String userID,String userName, String[] viewed, String[] purchaced) {
+		this.userID = userID;
+		this.userName = userName;
+		this.viewed = viewed;
+		this.purchaced = purchaced;
 	}
 	
 	public String getUserID() {
