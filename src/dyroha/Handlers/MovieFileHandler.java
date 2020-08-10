@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import dyroha.Classes.*;
 /** This class reads the files and creates the User array, Library object and gets the currently viewed movie for a user
@@ -13,12 +14,10 @@ import dyroha.Classes.*;
  *
  */
 public class MovieFileHandler {
-	private File users;
-	private File products;
-	private File currentUserSession;
+	private File users, products, currentUserSession;
 	private Library library;
 
-	/**
+	/** Creates the File users, products, and currentUserSession if they exist in the directory.
 	 * 
 	 * @param fileDirectory The directory the files are stored in
 	 */
@@ -54,7 +53,7 @@ public class MovieFileHandler {
 		while ((st = br.readLine()) != null && !st.isEmpty()) {
 			parts = st.split(", ");
 			if (parts[0].equals(id)) {
-				user = new User(parts);
+				user = new User(parts[0],parts[1], parts[2].split(";"), parts[3].split(";"));
 				break;
 			}
 		}
@@ -77,7 +76,7 @@ public class MovieFileHandler {
 		BufferedReader br1 = new BufferedReader(new FileReader(products));
 		while ((st = br1.readLine()) != null && !st.isEmpty()) {
 			parts = st.split(",");
-			movies.add(new Movie(parts));
+			movies.add(new Movie(parts[0], parts[1], parts[2], Arrays.copyOfRange(parts, 3, 8), parts[8], parts[9]));
 		}
 		br1.close();
 		Library lib = new Library(movies.toArray(new Movie[movies.size()]));
@@ -105,7 +104,7 @@ public class MovieFileHandler {
 	/**
 	 * 
 	 * @param user user find and add the current viewing movie to
-	 * @throws IOException if file doesn't exist
+	 * @throws IOException if the file couldn't be found
 	 */
 	private void getCurrentViewing(User user) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(currentUserSession));
