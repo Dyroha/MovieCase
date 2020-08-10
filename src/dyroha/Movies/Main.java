@@ -1,6 +1,5 @@
 package dyroha.Movies;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 import dyroha.Classes.Library;
@@ -11,7 +10,7 @@ import dyroha.Handlers.MovieSorter;
 import dyroha.Handlers.UserMovieRecomender;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		// Creates file handler for the text documents
 		MovieFileHandler fileHandler = new MovieFileHandler("src/test");
 		
